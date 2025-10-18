@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmoothAIOperator - Intelligent Automation</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Lucide Icons for aesthetic icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Custom Styles (for you to move to styles.css) -->
+    <style>
+        /* CSS to extract to styles.css */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* Light Gray/White Background */
+            color: #1e293b; /* Dark Text */
+        }
+        .text-smooth-primary {
+            color: #7c3aed; /* Vibrant Purple Accent */
+        }
+        .bg-smooth-primary {
+            background-color: #7c3aed;
+        }
+        .hover\:bg-smooth-darker:hover {
+            background-color: #6d28d9;
+        }
+        /* New CSS for initial hidden state and transitions */
+        .feature-container, .process-container {
+            opacity: 0;
+            transition: opacity 0.5s ease-out;
+        }
+        .feature-container.visible, .process-container.visible {
+            opacity: 1;
+        }
+        .feature-card {
+            transition: all 0.5s ease-out;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        .feature-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+
+    <!-- Header Navigation -->
+    <header class="bg-white shadow-md sticky top-0 z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <!-- Logo/Branding -->
+            <div class="flex items-center space-x-2">
+                <i data-lucide="cog" class="w-6 h-6 text-smooth-primary"></i>
+                <span class="text-xl font-extrabold text-gray-900">SmoothAIOperator</span>
+            </div>
+            <!-- Links (Placeholder) -->
+            <nav class="hidden md:flex space-x-6 text-sm font-medium text-gray-600">
+                <a href="#features" class="hover:text-smooth-primary transition">Features</a>
+                <a href="app.html" class="hover:text-smooth-primary transition">Demo</a>
+                <a href="#" class="hover:text-smooth-primary transition">About Us</a>
+            </nav>
+            <!-- CTA Button -->
+            <a href="app.html" class="px-4 py-2 bg-smooth-primary text-white font-semibold text-sm rounded-lg shadow-lg hover:bg-smooth-darker transition duration-150">
+                View Application
+            </a>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main>
+        
+        <!-- 1. Hero Section -->
+        <section class="text-center py-24 sm:py-32 bg-gray-50 border-b border-gray-200">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h1 class="text-5xl sm:text-6xl font-extrabold tracking-tight text-gray-900 mb-6">
+                    Intelligent Automation for <span class="text-smooth-primary">Precision Manufacturing</span>
+                </h1>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto mb-10">
+                    SmoothAIOperator replaces human oversight in factories with two highly optimized AI Agents, ensuring **Speed**, **Precision**, and **Unmatched Safety**.
+                </p>
+                
+                <!-- CTA Buttons -->
+                <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="app.html" class="px-8 py-3 bg-smooth-primary text-white text-lg font-bold rounded-xl shadow-xl hover:bg-smooth-darker transition duration-200 transform hover:scale-[1.02]">
+                        Launch Simulation
+                    </a>
+                    <!-- Updated ID for scroll action -->
+                    <button id="explore-features-btn" class="px-8 py-3 bg-white border border-gray-300 text-gray-700 text-lg font-bold rounded-xl shadow-md hover:bg-gray-100 transition duration-200 transform hover:scale-[1.02]">
+                        Explore Features
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Feature Cards (Initially Hidden Container) -->
+        <section id="features" class="feature-container max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">How Our AI Agents Deliver Value</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Feature 1: Speed -->
+                <div class="feature-card p-6 bg-white rounded-xl shadow-lg border border-gray-100" data-delay="0">
+                    <i data-lucide="zap" class="w-8 h-8 text-smooth-primary mb-4"></i>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Unmatched Speed</h3>
+                    <p class="text-gray-600">Eliminate latency in decision-making. Our agents process data in milliseconds, far surpassing human response times, ensuring a high-velocity workflow.</p>
+                </div>
+                
+                <!-- Feature 2: Precision -->
+                <div class="feature-card p-6 bg-white rounded-xl shadow-lg border border-gray-100" data-delay="200">
+                    <i data-lucide="gauge" class="w-8 h-8 text-smooth-primary mb-4"></i>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Zero-Error Precision</h3>
+                    <p class="text-gray-600">The AI enforces strict quality tolerances, identifying microscopic faults and preventing costly manufacturing defects *before* they occur.</p>
+                </div>
+
+                <!-- Feature 3: Safety -->
+                <div class="feature-card p-6 bg-white rounded-xl shadow-lg border border-gray-100" data-delay="400">
+                    <i data-lucide="shield-check" class="w-8 h-8 text-smooth-primary mb-4"></i>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Proactive Safety</h3>
+                    <p class="text-gray-600">Agents monitor machine health and external factors 24/7, predicting failures and triggering proactive stops far more reliably than humans.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 3. Step-by-Step Process (Initially Hidden Container) -->
+        <section class="process-container bg-gray-100 py-20">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">From Step-by-Step to a Smooth Operation</h2>
+                
+                <div class="space-y-12">
+                    
+                    <!-- Step 1: Human Approval -->
+                    <div class="flex flex-col md:flex-row items-start space-y-4 md:space-y-0 md:space-x-8">
+                        <div class="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-full bg-smooth-primary text-white text-xl font-bold">1</div>
+                        <div class="flex-grow">
+                            <h3 class="text-2xl font-bold text-gray-900 mb-2">Human Approval Gate</h3>
+                            <p class="text-gray-600">The process starts with a simple human command approval in the chat interface, initiating the job for Machine 1.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Line Separator -->
+                    <div class="md:ml-6 border-l-4 border-gray-300 h-10"></div>
+
+                    <!-- Step 2: AI Execution & Handoff -->
+                    <div class="flex flex-col md:flex-row items-start space-y-4 md:space-y-0 md:space-x-8">
+                        <div class="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-full bg-smooth-primary text-white text-xl font-bold">2</div>
+                        <div class="flex-grow">
+                            <h3 class="text-2xl font-bold text-gray-900 mb-2">AI Execution & Seamless Handoff</h3>
+                            <p class="text-gray-600">Agent A manages Machine 1's full production cycle. Upon completion, it automatically hands the component and data to Agent B for Quality Control on Machine 2.</p>
+                        </div>
+                    </div>
+
+                    <!-- Line Separator -->
+                    <div class="md:ml-6 border-l-4 border-gray-300 h-10"></div>
+                    
+                    <!-- Step 3: Critical QC Check -->
+                    <div class="flex flex-col md:flex-row items-start space-y-4 md:space-y-0 md:space-x-8">
+                        <div class="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-full bg-smooth-primary text-white text-xl font-bold">3</div>
+                        <div class="flex-grow">
+                            <h3 class="text-2xl font-bold text-gray-900 mb-2">Critical QC Check</h3>
+                            <p class="text-gray-600">Agent B executes a final critical check. If any failure is detected (or injected!), the agent immediately halts the line and logs an issue, protecting the product integrity.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-10 bg-white border-t border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-sm text-gray-500">
+            © 2025 SmoothAIOperator. Built for the Hackathon.
+        </div>
+    </footer>
+
+    <!-- JavaScript (for you to move to index.js) -->
+    <script>
+        // JS to extract to index.js
+        document.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
+            const featureCards = document.querySelectorAll('.feature-card');
+            const featureContainer = document.querySelector('.feature-container');
+            const processContainer = document.querySelector('.process-container');
+            const exploreBtn = document.getElementById('explore-features-btn');
+
+            // --- Scroll Reveal Logic ---
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const card = entry.target;
+                        const delay = parseInt(card.getAttribute('data-delay') || 0);
+                        
+                        // Ensure main containers are visible
+                        featureContainer.classList.add('visible');
+                        processContainer.classList.add('visible');
+
+                        // Sequential animation for cards
+                        setTimeout(() => {
+                            card.classList.add('visible');
+                        }, delay);
+                        
+                        observer.unobserve(card);
+                    }
+                });
+            }, {
+                rootMargin: '0px',
+                threshold: 0.1
+            });
+
+            // --- Scroll Button Logic ---
+            if (exploreBtn) {
+                exploreBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    
+                    // 1. Smoothly scroll to the features section
+                    const target = document.getElementById('features');
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth' });
+                    }
+
+                    // 2. Immediately trigger the fade-in for the main containers
+                    featureContainer.classList.add('visible');
+                    processContainer.classList.add('visible');
+
+                    // 3. Start observing to trigger sequential card animations
+                    featureCards.forEach(card => {
+                        observer.observe(card);
+                    });
+                });
+            }
+
+            // Start observing for regular scroll if the button isn't used
+            // This ensures the animation still works if the user manually scrolls
+            featureCards.forEach(card => {
+                observer.observe(card);
+            });
+        });
+    </script>
+</body>
+</html>

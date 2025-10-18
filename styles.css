@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f1f5f9; /* Slate-100 */
+        }
+        /* Style for the machine blocks */
+        .machine-block {
+            background-color: #ffffff;
+            border: 2px solid #e2e8f0;
+            transition: all 0.2s;
+            cursor: pointer;
+        }
+        .machine-block:hover {
+            border-color: #8b5cf6; /* Violet-500 */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.06);
+            transform: translateY(-2px);
+        }
+        .active-ring {
+            box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.5); /* Violet-500 ring for active/healthy */
+        }
+        .error-ring {
+            box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.5); /* Red-500 ring for error/issue */
+        }
+        /* Custom scrollbar for task lists */
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 3px;
+        }
+
+        /* Active tab style for sidebar */
+        .tab-btn.active {
+            border-color: #8b5cf6; /* Violet-500 */
+            color: #8b5cf6; /* Violet-500 */
+            font-weight: 600;
+        }
+
+        /* --- Right Sidebar Layout Transition CSS --- */
+
+        /* Default Expanded State (W-1/4, min-width 300px for desktop) */
+        #right-sidebar {
+            width: 25vw;
+            min-width: 300px;
+            transition: all 0.3s ease-in-out;
+            flex-shrink: 0; 
+        }
+
+        /* Collapsed State */
+        .sidebar-collapsed {
+            width: 0 !important;
+            min-width: 0 !important;
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+            opacity: 0;
+            pointer-events: none; /* Disable interaction when collapsed */
+        }
+
+        /* Chatbot Style */
+        .chat-container {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            background-color: #1f2937; /* Dark Gray for Chat */
+        }
+        .chat-history {
+            flex-grow: 1;
+            overflow-y: auto;
+            padding: 1rem;
+            display: flex;
+            flex-direction: column-reverse; /* Newest message at the bottom */
+        }
+        .chat-input-area {
+            flex-shrink: 0;
+            padding: 1rem;
+            border-top: 1px solid #374151;
+        }
