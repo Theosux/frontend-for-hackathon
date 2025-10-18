@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
     <script src="script.js"></script>
-    <title>AI Factory Hub - Controlled Simulation</title>
+    <title>SmoothAIOperator</title>
     <!-- Load Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Load Lucide Icons for aesthetic icons -->
@@ -21,7 +21,7 @@
       >
         <!-- Chat Sessions -->
         <div class="p-4 border-b border-gray-700 flex flex-col space-y-2">
-          <h3 class="text-lg font-bold text-violet-400">Agent Sessions</h3>
+          <h3 class="text-lg font-bold text-violet-400">Operator Chat</h3>
           <div
             class="space-y-1 text-sm custom-scrollbar overflow-y-auto max-h-36"
           >
@@ -29,19 +29,19 @@
               class="flex items-center space-x-2 p-2 bg-gray-700 rounded-lg cursor-pointer"
             >
               <i data-lucide="message-square" class="w-4 h-4 text-white"></i>
-              <span>Current Job (M1/M2)</span>
+              <span>Job Curent</span>
             </div>
             <div
               class="flex items-center space-x-2 p-2 text-gray-400 hover:bg-gray-800 rounded-lg cursor-pointer"
             >
               <i data-lucide="archive" class="w-4 h-4"></i>
-              <span>Historical Analysis #14</span>
+              <span>Chat</span>
             </div>
             <div
               class="flex items-center space-x-2 p-2 text-gray-400 hover:bg-gray-800 rounded-lg cursor-pointer"
             >
               <i data-lucide="bot" class="w-4 h-4"></i>
-              <span>Configuration Agent</span>
+              <span>Agent de configurație</span>
             </div>
           </div>
         </div>
@@ -56,8 +56,8 @@
               class="w-5 h-5 flex-shrink-0 text-violet-400"
             ></i>
             <p class="bg-gray-700 p-3 rounded-xl rounded-tl-none max-w-xs">
-              System initialized. Awaiting your first command or approval to
-              start the factory process.
+              Sistemul a fost inițializat. Aștept comenzi sau aprobare
+              pentru a porni procesul fabricii.
             </p>
           </div>
         </div>
@@ -85,7 +85,7 @@
       <main class="flex-grow p-8 overflow-y-auto">
         <div class="flex justify-between items-center mb-6">
           <h1 class="text-3xl font-extrabold text-gray-900">
-            AI Factory Automation Hub
+            SmoothAIOperator Hub
           </h1>
 
           <!-- NEW: Back to Landing Button -->
@@ -94,7 +94,7 @@
             class="flex items-center space-x-1 px-4 py-2 bg-gray-200 text-gray-700 font-medium rounded-lg shadow-sm hover:bg-gray-300 transition duration-150"
           >
             <i data-lucide="arrow-left" class="w-5 h-5"></i>
-            <span>Back to Landing</span>
+            <span>Înapoi la Pagina Principală</span>
           </a>
         </div>
 
@@ -108,12 +108,12 @@
           >
             <div class="flex justify-between items-start">
               <h2 class="text-2xl font-bold text-gray-800">
-                Machine 1: Processing Unit
+                Machine 1: Creare Design
               </h2>
               <i data-lucide="cog" class="w-6 h-6 text-violet-600"></i>
             </div>
             <p class="text-sm text-gray-500 mt-1">
-              Status controlled by **Agent A**
+              Status controlat de <b>AI Agent 1</b>
             </p>
             <div class="mt-4 flex items-center space-x-2">
               <div
@@ -121,13 +121,13 @@
                 class="w-3 h-3 rounded-full bg-yellow-500 animate-pulse"
               ></div>
               <span id="m1-status-text" class="text-yellow-700 font-semibold"
-                >Ready</span
+                >Pregătit</span
               >
             </div>
             <div class="mt-4 text-sm text-gray-700">
-              Current Step:
+              Status actual:
               <span id="m1-current-step" class="font-bold"
-                >Step 0: Awaiting Job Start</span
+                >Pasul 0: Aștept Job</span
               >
             </div>
           </div>
@@ -140,12 +140,12 @@
           >
             <div class="flex justify-between items-start">
               <h2 class="text-2xl font-bold text-gray-800">
-                Machine 2: Handoff/QC Unit
+                Machine 2: Prelucrare Materială
               </h2>
               <i data-lucide="eye" class="w-6 h-6 text-violet-600"></i>
             </div>
             <p class="text-sm text-gray-500 mt-1">
-              Status controlled by **Agent B**
+              Status controlat de <b>AI Agent 2</b>
             </p>
             <div class="mt-4 flex items-center space-x-2">
               <div
@@ -153,11 +153,11 @@
                 class="w-3 h-3 rounded-full bg-yellow-500"
               ></div>
               <span id="m2-status-text" class="text-yellow-700 font-semibold"
-                >Idle</span
+                >În așteptare</span
               >
             </div>
             <div class="mt-4 text-sm text-gray-700">
-              Current Status:
+              Status actual:
               <span id="m2-current-step" class="font-bold text-gray-700"
                 >N/A</span
               >
@@ -171,7 +171,7 @@
         >
           <h3 class="text-xl font-bold text-gray-800 mb-4 flex items-center">
             <i data-lucide="cpu" class="w-5 h-5 mr-2 text-violet-600"></i
-            >Simulation Control Panel (Machine 1)
+            >Panou de control Simulare (Machine 1)
           </h3>
           <div class="flex flex-wrap items-center gap-4">
             <!-- Start/Stop Buttons -->
@@ -181,7 +181,7 @@
               class="flex items-center space-x-2 px-6 py-3 bg-green-600 text-white font-semibold rounded-xl shadow-md hover:bg-green-700 transition"
             >
               <i data-lucide="play" class="w-5 h-5"></i>
-              <span>Start Process</span>
+              <span>Start Proces</span>
             </button>
             <button
               id="stop-btn"
@@ -190,7 +190,7 @@
               class="flex items-center space-x-2 px-6 py-3 bg-red-600 text-white font-semibold rounded-xl shadow-md hover:bg-red-700 transition opacity-50 cursor-not-allowed"
             >
               <i data-lucide="square" class="w-5 h-5"></i>
-              <span>Stop Process</span>
+              <span>Stop Proces</span>
             </button>
 
             <!-- Manual Step Control -->
@@ -203,7 +203,7 @@
                 disabled
                 class="flex items-center space-x-2 px-4 py-2 bg-violet-600 text-white font-semibold rounded-lg shadow-md hover:bg-violet-700 transition disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                <span>Next Step (Manual)</span>
+                <span>Următorul Pas (Manual)</span>
                 <i data-lucide="arrow-right" class="w-5 h-5"></i>
               </button>
 
@@ -221,7 +221,7 @@
                 onclick="toggleAutoMode()"
                 class="px-3 py-2 text-sm font-medium rounded-lg shadow-sm transition bg-violet-100 text-violet-700 hover:bg-violet-200"
               >
-                Automation: <span id="auto-mode-status">OFF</span>
+                Automat: <span id="auto-mode-status">OFF</span>
               </button>
             </div>
 
@@ -232,14 +232,14 @@
                 class="px-3 py-2 text-sm font-medium rounded-lg shadow-sm transition bg-red-100 text-red-700 hover:bg-red-200"
               >
                 <i data-lucide="bug" class="w-4 h-4 mr-1 inline"></i>
-                Insert Bad Data
+                Inserează Date Rele
               </button>
               <button
                 onclick="injectRandomness(1)"
                 class="px-3 py-2 text-sm font-medium rounded-lg shadow-sm transition bg-blue-100 text-blue-700 hover:bg-blue-200"
               >
                 <i data-lucide="shuffle" class="w-4 h-4 mr-1 inline"></i>
-                Random Data
+                Inserează Date Aleatoare
               </button>
             </div>
           </div>
@@ -251,7 +251,7 @@
         >
           <h3 class="text-xl font-bold text-gray-800 mb-4 flex items-center">
             <i data-lucide="eye" class="w-5 h-5 mr-2 text-violet-600"></i
-            >Simulation Control Panel (Machine 2)
+            >Panou de control Simulare (Machine 2)
           </h3>
           <div class="flex flex-wrap items-center gap-4">
             <!-- Start/Stop Buttons -->
@@ -262,7 +262,7 @@
               class="flex items-center space-x-2 px-6 py-3 bg-green-600 text-white font-semibold rounded-xl shadow-md hover:bg-green-700 transition disabled:opacity-50 disabled:cursor-not-allowed"
             >
               <i data-lucide="play" class="w-5 h-5"></i>
-              <span>Start Process</span>
+              <span>Start Proces</span>
             </button>
             <button
               id="m2-stop-btn"
@@ -271,7 +271,7 @@
               class="flex items-center space-x-2 px-6 py-3 bg-red-600 text-white font-semibold rounded-xl shadow-md hover:bg-red-700 transition opacity-50 cursor-not-allowed"
             >
               <i data-lucide="square" class="w-5 h-5"></i>
-              <span>Stop Process</span>
+              <span>Stop Proces</span>
             </button>
 
             <!-- Manual Step Control -->
@@ -284,7 +284,7 @@
                 disabled
                 class="flex items-center space-x-2 px-4 py-2 bg-violet-600 text-white font-semibold rounded-lg shadow-md hover:bg-violet-700 transition disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                <span>Next Step (Manual)</span>
+                <span>Următorul Pas (Manual)</span>
                 <i data-lucide="arrow-right" class="w-5 h-5"></i>
               </button>
 
@@ -294,7 +294,7 @@
                 onclick="toggleAutoMode2()"
                 class="px-3 py-2 text-sm font-medium rounded-lg shadow-sm transition bg-violet-100 text-violet-700 hover:bg-violet-200"
               >
-                Automation: <span id="m2-auto-mode-status">OFF</span>
+                Automat: <span id="m2-auto-mode-status">OFF</span>
               </button>
             </div>
 
@@ -305,14 +305,14 @@
                 class="px-3 py-2 text-sm font-medium rounded-lg shadow-sm transition bg-red-100 text-red-700 hover:bg-red-200"
               >
                 <i data-lucide="bug" class="w-4 h-4 mr-1 inline"></i>
-                Insert Bad Data
+                Inserează Date Rele
               </button>
               <button
                 onclick="injectRandomness(2)"
                 class="px-3 py-2 text-sm font-medium rounded-lg shadow-sm transition bg-blue-100 text-blue-700 hover:bg-blue-200"
               >
                 <i data-lucide="shuffle" class="w-4 h-4 mr-1 inline"></i>
-                Random Data
+                Inserează Date Aleatoare
               </button>
             </div>
           </div>
@@ -325,7 +325,7 @@
             class="flex items-center space-x-2 px-6 py-3 bg-gray-800 text-white font-semibold rounded-xl shadow-lg hover:bg-gray-700 transition duration-150 transform hover:scale-[1.01]"
           >
             <i data-lucide="workflow" class="w-5 h-5"></i>
-            <span>View Factory Process Steps (Flow Graph)</span>
+            <span>Vizionează Graficul Procesului de Fabricație</span>
           </button>
         </div>
       </main>
@@ -345,7 +345,7 @@
         id="right-sidebar"
         class="sidebar-container bg-white border-l border-gray-200 shadow-xl flex flex-col p-6 custom-scrollbar"
       >
-        <h3 class="text-xl font-bold text-gray-800 mb-4">Real-time Feedback</h3>
+        <h3 class="text-xl font-bold text-gray-800 mb-4">Feedback în Timp Real</h3>
 
         <!-- Tabs -->
         <div class="flex border-b border-gray-200 mb-4">
@@ -361,7 +361,7 @@
             class="tab-btn flex-1 py-2 text-center text-sm font-medium border-b-2 border-transparent text-gray-500 hover:text-gray-800 transition duration-150"
             onclick="switchTab('issues')"
           >
-            Issues
+            Erori
           </button>
         </div>
 
@@ -406,14 +406,14 @@
               <h3
                 class="text-xl font-semibold text-violet-700 mb-3 flex items-center"
               >
-                <i data-lucide="database" class="w-5 h-5 mr-2"></i> Real-time
-                Data Feed
+                <i data-lucide="database" class="w-5 h-5 mr-2"></i> Modificare Date
+                În Timp real
               </h3>
               <pre
                 id="machine-data-display"
                 class="bg-gray-50 p-4 rounded-lg text-xs overflow-auto h-64 border border-gray-200"
               >
-Loading data...</pre
+Încărcare Date...</pre
               >
             </div>
 
@@ -422,8 +422,8 @@ Loading data...</pre
               <h3
                 class="text-xl font-semibold text-violet-700 mb-3 flex items-center"
               >
-                <i data-lucide="circuit-board" class="w-5 h-5 mr-2"></i> Agent
-                Processes
+                <i data-lucide="circuit-board" class="w-5 h-5 mr-2"></i> Procesul
+                Agentului
               </h3>
               <div id="machine-processes-display" class="space-y-3"></div>
             </div>
@@ -444,7 +444,7 @@ Loading data...</pre
         <div class="p-6 h-full flex flex-col">
           <div class="flex justify-between items-center border-b pb-4 mb-4">
             <h2 class="text-2xl font-bold text-gray-800">
-              Factory Production Flow (Graph View)
+              Graficul Procesului de Fabricație
             </h2>
             <button
               class="text-gray-400 hover:text-gray-600"
@@ -463,9 +463,9 @@ Loading data...</pre
                 class="w-10 h-10 mx-auto text-violet-400 mb-2"
               ></i>
               <p>
-                Showing the **${cncProcess.length} Steps** in the Primary
-                Processing Unit (Machine 1) Flow and **${cncProcess2.length}
-                Steps** in the Handoff/QC Unit (Machine 2) Flow.
+                Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit. <br />
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br />
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.  <br />
               </p>
               <div class="grid grid-cols-2 gap-4 mt-4">
                 <div>
@@ -473,9 +473,7 @@ Loading data...</pre
                   <ul
                     class="list-disc list-inside text-left mx-auto text-gray-700"
                   >
-                    ${cncProcess.map((step, i) => `
-                    <li>Step ${i + 1}: ${step.name}</li>
-                    `).join('')}
+ 
                   </ul>
                 </div>
                 <div>
@@ -483,9 +481,7 @@ Loading data...</pre
                   <ul
                     class="list-disc list-inside text-left mx-auto text-gray-700"
                   >
-                    ${cncProcess2.map((step, i) => `
-                    <li>Step ${i + 1}: ${step.name}</li>
-                    `).join('')}
+
                   </ul>
                 </div>
               </div>
@@ -507,7 +503,7 @@ Loading data...</pre
         <div class="p-6">
           <div class="flex justify-between items-center border-b pb-4 mb-4">
             <h2 class="text-2xl font-bold text-gray-800">
-              Automation Speed Settings
+              Setări Viteză de Derulare
             </h2>
             <button
               class="text-gray-400 hover:text-gray-600"
@@ -518,7 +514,7 @@ Loading data...</pre
           </div>
 
           <p class="text-gray-600 mb-4">
-            Select the simulation speed for automatic steps (currently:
+            Setează viteza derulării simulării cu pași automați (momentan:
             <span id="current-speed-text" class="font-bold text-violet-600"
               >Normal</span
             >).
@@ -531,7 +527,7 @@ Loading data...</pre
               data-speed="Fast"
             >
               <span class="font-semibold text-sm">Fast (1 Second)</span> -
-              Perfect for quick demos.
+              Perfect pentru demo-uri rapide.
             </button>
             <button
               onclick="setAutomationSpeed(3000)"
@@ -539,22 +535,21 @@ Loading data...</pre
               data-speed="Normal"
             >
               <span class="font-semibold text-sm">Normal (3 Seconds)</span> -
-              Default demonstration pace.
+              Timp normal pentru o demonstrație.
             </button>
             <button
               onclick="setAutomationSpeed(5000)"
               class="w-full text-left p-3 rounded-lg border transition hover:bg-gray-100 speed-option"
               data-speed="Slow"
             >
-              <span class="font-semibold text-sm">Slow (5 Seconds)</span> - Use
-              for detailed explanation of AI decisions.
+              <span class="font-semibold text-sm">Slow (5 Seconds)</span> - Perfect
+              pentru a fi acompaniat de o explicație detaliată.
             </button>
           </div>
 
           <div class="mt-6 pt-4 border-t text-sm text-gray-500">
             <p>
-              Changing the speed only affects the automated 'Next Step'
-              frequency.
+              Schimbarea vitezei afectează doar frecvența versiunei automate de 'Următorul Pas'.
             </p>
           </div>
         </div>
