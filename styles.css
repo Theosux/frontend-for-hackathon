@@ -76,3 +76,36 @@
             padding: 1rem;
             border-top: 1px solid #374151;
         }
+           /* CSS to extract to styles.css */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* Light Gray/White Background */
+            color: #1e293b; /* Dark Text */
+        }
+        .text-smooth-primary {
+            color: #7c3aed; /* Vibrant Purple Accent */
+        }
+        .bg-smooth-primary {
+            background-color: #7c3aed;
+        }
+        .hover\:bg-smooth-darker:hover {
+            background-color: #6d28d9;
+        }
+        /* New CSS for initial hidden state and transitions */
+        .feature-container, .process-container {
+            opacity: 0;
+            transition: opacity 0.5s ease-out;
+        }
+        .feature-container.visible, .process-container.visible {
+            opacity: 1;
+        }
+        .feature-card {
+            transition: all 0.5s ease-out;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        .feature-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
